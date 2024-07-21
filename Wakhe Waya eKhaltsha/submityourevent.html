@@ -1,0 +1,309 @@
+<!doctype = html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/loc-icon.png">
+    <script src="https://kit.fontawesome.com/3dcdd121c8.js"  crossorigin="anonymous"></script>
+    <title>eKhaltsha: Submit your event</title>
+    <script type="module" src="script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+
+<body>
+    <!-- <main> -->
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <a href="index.html"><div class="img-container"><img src="./images/logo.png" class="navlogo" alt="logo-business"></div></a>
+            <div class="nav-links dis-links">
+                <a href="business-directory.html">LOCAL LISTINGS</a>
+                <a href="what-to-do.html">THINGS TO DO</a>
+                <a href="events.html">EVENTS</a>
+                <a href="contact-us.html">CONTACT</a>
+            </div>
+            <div class="cart-btn dis-con">
+                <span class="nav-con">
+                    MENU<i class="fas fa-bars"></i>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <!-- end of navbar -->
+    <!-- main menu -->
+    <div class="cart-overlay"><div class="cart">
+        <span class="close-cart">
+            CLOSE  <i class="fas fa-window-close"></i>
+        </span>
+        <a href="index.html"><img src="./images/logo.png" alt="logo-business" class="ekhaltsha-logo"></a>
+        <div class="cart-content menu-container">
+            <section class="menu-items">
+                <div id="toggleDivA" class="toggleDiv">
+                    <a>DISCOVER KHAYELITHSA</a><span id="shownSpanA">&#x25BC</span> <span id="hiddenSpanA">&#x25B2</span>
+                </div>
+                <div class="menu-links" id="hiddenDivA">
+                    <a href="about.html">ABOUT US</a>
+                    <a href="ekhaltsha.html">E-KHALTSHA</a>
+                    <a href="business-directory.html">LOCAL LISTINGS</a>
+                </div>
+            </section>
+            
+            <section class="menu-items">
+                <div id="toggleDivB" class="toggleDiv">
+                    <a href="what-to-do.html">THINGS TO DO</a>
+                </div>
+            </section>
+            <section class="menu-items">
+                <div id="toggleDivC" class="toggleDiv">
+                    <a href="events.html">EVENTS</a> <span id="shownSpanC">&#x25BC</span> <span id="hiddenSpanC">&#x25B2</span>
+                </div>
+                <div class="menu-links" id="hiddenDivC">
+                    <a href="submityourevent.html">SUBMIT YOUR EVENT</a>
+                </div>
+            </section>
+                <a href="contact-us.html">CONTACT</a>
+        </div>
+        </div>
+    </div>
+    <!-- end of main menu -->
+    <!-- hero -->
+    <header class="hero">
+      <div class="banner">
+            <h1 class="banner-title"><span>Submit </span><span>Your Event</span></h1>
+      </div>
+    </header>
+    <!-- end of hero -->
+    
+    
+    <section class="content-wrap">
+        <h2 style="text-align:center">Post your Khayelitsha Event for numbers of visitors and local's looking for the best concerts, festivals,exhibits, activities and other things to do in Khayelitsha</h2>
+        <div class="submitevent-container">
+            <form id="eventForm" onsubmit="sendEmail(); reset(); return false;">
+                <h3>Add Your Event</h3>
+                <label>
+                    <h4>Event Name*</h4>
+                    <input type="text"   id="event-name" placeholder="Make short but descriptive" required>
+                </label>
+                <section class="event-details">
+                    <div>
+                        <h4>Choose a Category</h4>
+                        <div class="dropdown">
+                            <button onclick="toggleDropdown()" class="dropbtn"><span id="result">Select Options</span><span class="arrows" id="shownSpanA">&#x25BC</span> <span class="arrows" id="hiddenSpanA">&#x25B2</span></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <label><input type="radio" name="category" value="Automotive" onclick="getSelectedOption()"> Automotive</label>
+                                <label><input type="radio" name="category" value="Comedy" onclick="getSelectedOption()"> Comedy</label>
+                                <label><input type="radio" name="category" value="Day Camps" onclick="getSelectedOption()"> Day Camps</label>
+                                <label><input type="radio" name="category" value="Dining" onclick="getSelectedOption()"> Dining</label>
+                                <label><input type="radio" name="category" value="Drinks" onclick="getSelectedOption()"> Drinks</label>
+                                <label><input type="radio" name="category" value="Education & Lectures" onclick="getSelectedOption()"> Education & Lectures</label>
+                                <label><input type="radio" name="category" value="Family & Kids" onclick="getSelectedOption()"> Family & Kids</label>
+                                <label><input type="radio" name="category" value="Fashion" onclick="getSelectedOption()"> Fashion</label>
+                                <label><input type="radio" name="category" value="Festivals" onclick="getSelectedOption()"> Festivals</label>
+                                <label><input type="radio" name="category" value="Film" onclick="getSelectedOption()"> Film</label>
+                                <label><input type="radio" name="category" value="Fitness & Health" onclick="getSelectedOption()"> Fitness & Health</label>
+                                <label><input type="radio" name="category" value="Fundraiser" onclick="getSelectedOption()"> Fundraiser</label>
+                                <label><input type="radio" name="category" value="Gaming" onclick="getSelectedOption()"> Gaming</label>
+                                <label><input type="radio" name="category" value="Holiday Pop-up" onclick="getSelectedOption()"> Holiday Pop-up</label>
+                                <label><input type="radio" name="category" value="Mental Health" onclick="getSelectedOption()"> Mental Health</label>
+                                <label><input type="radio" name="category" value="Museums & Attractions" onclick="getSelectedOption()"> Museums & Attractions</label>
+                                <label><input type="radio" name="category" value="Music & Attractions" onclick="getSelectedOption()"> Music & Attractions</label>
+                                <label><input type="radio" name="category" value="Neighborhood" onclick="getSelectedOption()"> Neighborhood</label>
+                                <label><input type="radio" name="category" value="Networking" onclick="getSelectedOption()"> Networking</label>
+                                <label><input type="radio" name="category" value="Nightlife" onclick="getSelectedOption()"> Nightlife</label>
+                                <label><input type="radio" name="category" value="Outdoors & Recreation" onclick="getSelectedOption()"> Outdoors & Recreation</label>
+                                <label><input type="radio" name="category" value="Pets" onclick="getSelectedOption()"> Pets</label>
+                                <label><input type="radio" name="category" value="Shopping" onclick="getSelectedOption()"> Shopping</label>
+                                <label><input type="radio" name="category" value="Sports" onclick="getSelectedOption()"> Sports</label>
+                                <label><input type="radio" name="category" value="Theater & Perfoming Arts" onclick="getSelectedOption()"> Theater & Perfoming Arts</label>
+                                <label><input type="radio" name="category" value="Visual Arts & Galleries" onclick="getSelectedOption()"> Visual Arts & Galleries</label>
+                                <!-- <button type="button" onclick="getSelectedOption()">Submit</button> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- used for display control -->
+                    </div>
+                    
+                    <label>
+                        <h4>Start Date*</h4> 
+                        <input type="date" id="start-date" required/>
+                    </label>
+                    
+                    <label>
+                        <h4>End Date*</h4>
+                        <input type="date" id="end-date" required/>
+                    </label>
+                    
+                    <label>    
+                        <h4>Start Time*</h4>
+                        <input type="time" id="start-time" required/>
+                    </label>
+              
+                    <label>
+                        <h4>End Time</h4>
+                        <input type="time" id="end-time" required/>
+                    </label>
+                    
+                </section>
+                <section>
+                    <h4>Event Recurs</h4>
+                    </label><input type="checkbox"   id="event-rec" placeholder="Make short but descriptive" required>Does event occur overtime?</label>
+                </section>
+                <label>
+                    <h4>Location</h4>
+                    <input type="text"   id="location" placeholder="Make short but descriptive" required>
+                </label>
+
+                <label>    
+                    <h4>Event Description *</h4>
+                    <textarea id="event-description" rows="4"></textarea>
+                </label>
+                
+                <label>    
+                    <h4>Event Image</h4>
+                    <input type="file" accept="image/*" id="event-image" title="Only images are allowed" required>
+                </label>
+                
+                <label>
+                    <h4>Event URL</h4>
+                    <input type="url" id="event-url" name="eventurl" required>
+                </label>
+                
+                
+                <section>
+                    <h4>Event Cost</h4>
+                    <label><input type="checkbox"   id="event-cost" onclick="toggleURL()"> This is a free event</label>
+
+                    <label id="eventticket-lbl">    
+                        <h4>Ticket URL</h4>
+                        <input type="url" id="ticket-url" name="ticketurl" required>
+                    </label>
+                </section>
+
+                
+                <label>
+                    <h4>Event Info Phone Number</h4>
+                    <input type="tel" placeholder="+278400000000" id="event-info-number" required>
+                </label>
+                
+
+                <label>
+                    <h4>Event Info Email</h4>
+                    <input type="email" placeholder="youremail@example.com" id="event-info-email" required>
+                </label>
+                
+
+                <feildset class="event-details">
+                    <section>
+                    <label>
+                        <h4>Event Submitter Name</h4>
+                        <input type="text" name="submittername" placeholder="your name"  id="submittername" required>
+                    </label>
+                    </section>
+                    <section>
+                    <label>    
+                        <h4>Event Submitter Email</h4>
+                        <input type="email" name="submitteremail" placeholder="youremail@email.com" id="submitteremail" required>
+                    </label>
+                    </section>
+                    <section>
+                    <label>
+                        <h4>Event Submitter Phone number</h4>
+                        <input type="tel" name="submitterphone" placeholder="Enter your phone number" id="submitterphone" required>
+                    </label>
+                    </section>
+                </feildset>
+                
+                <button type="submit">Submit</button>
+    
+            </form>
+        </div>
+        <!-- end of contact form -->
+        <script>
+        let selectedCategory = " "; 
+        
+        
+        function sendEmail(){
+            Email.send({
+                secureToken :  "8ee6e9a5-43c9-40d4-a32b-683298267c2f",
+                To : "ekhaltsha@gmail.com",
+                From : "ekhaltsha@gmail.com",
+                Subject : "New event added from website",
+                Body: "Event Name             : " + document.getElementById("event-name").value
+                    + "<br> Start Date        : " + document.getElementById("start-date").value
+                    + "<br> End Date          : " + document.getElementById("end-date").value
+                    + "<br> Start Time        : " + document.getElementById("start-time").value
+                    + "<br> End Time          : " + document.getElementById("end-time").value 
+                    + "<br> Location          : " + document.getElementById("location").value
+                    + "<br> Event Description : " + document.getElementById("event-description").value
+                    + "<br> Category          : " + selectedCategory
+                    + "<br> Event URL         : " + document.getElementById("event-url").value
+                    + "<br> Ticket URL        : " + document.getElementById("ticket-url").value
+                    + "<br> Event Info Phone Number: " + document.getElementById("event-info-number").value
+                    + "<br><br> Event Added By <br>" 
+                    + "<br> Name  : " + document.getElementById("submittername").value
+                    + "<br> Email : " + document.getElementById("submitteremail").value
+                    + "<br> Phone : " + document.getElementById("submitterphone").value
+            }).then(
+                message => alert("Message Sent Successfully")
+                )
+        };
+
+        window.addEventListener('load', function(){
+                var element1 = document.getElementById('submittername');
+                var elementDivA = document.getElementById('toggleDivA');
+                
+                //get size of element
+                var elemWidth = element1.offsetWidth;
+                var elemHeight = element1.offsetHeight;
+                
+                //set size of elements
+                elementDivA.style.width = elemWidth + 'px';
+                elementDivA.style.height = elemHeight + 'px';
+        });
+
+        function getSelectedOption() {
+            const options = document.getElementsByName('category');
+            let selectedOption = '';
+
+            for (const option of options) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+
+            if (selectedOption) {
+                alert('You selected: ' + selectedOption);
+                document.getElementById('result').innerText = selectedOption;
+                selectedCategory = selectedOption;
+            } else {
+                alert('No option selected');
+            }
+            toggleDropdown()
+        };
+
+        /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            //document.getElementById("shownSpanA").classList.toggle(); 
+            document.getElementById("hiddenSpanA").classList.toggle("show"); 
+        };
+
+        /* When user clicks on the checkbox, toggles the url input html element */
+        function toggleURL(){
+            document.getElementById("eventticket-lbl").classList.toggle("hide");
+        }
+        
+        </script>
+    </section>
+    
+    <!-- footer -->
+    <footer class="footer">    </footer>
+    <!-- end of footer -->
+    <!-- </main> -->
+</body>
+
+</html>

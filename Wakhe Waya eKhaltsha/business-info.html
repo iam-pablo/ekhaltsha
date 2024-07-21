@@ -1,0 +1,163 @@
+<!doctype = html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/loc-icon.png">
+    <script src="https://kit.fontawesome.com/3dcdd121c8.js"  crossorigin="anonymous"></script>
+    <title>eKhaltsha: Business Information</title>
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+    <!-- <main> -->
+        <!-- navbar -->
+<nav class="navbar">
+    <div class="navbar-center">
+        <a href="index.html"><img src="./images/logo.png" alt="logo-business" style="width:150px;height:100px"></a>
+        <div class="nav-links dis-links">
+            <a href="business-directory.html">LOCAL LISTINGS</a>
+            <a href="what-to-do.html">THINGS TO DO</a>
+            <a href="events.html">EVENTS</a>
+            <a href="contact-us.html">CONTACT</a>
+        </div>
+        <div class="cart-btn dis-con">
+            <span class="nav-con">
+                MENU<i class="fas fa-bars"></i>
+            </span>
+        </div>
+    </div>
+</nav>
+<!-- end of navbar -->
+<!-- main menu -->
+<div class="cart-overlay"><div class="cart">
+    <span class="close-cart">
+        CLOSE  <i class="fas fa-window-close"></i>
+    </span>
+    <a href="index.html"><img src="./images/logo.png" alt="logo-business" class="ekhaltsha-logo"></a>
+    <div class="cart-content menu-container">
+        <section class="menu-items">
+            <div id="toggleDivA" class="toggleDiv">
+                <a>DISCOVER KHAYELITSHA</a><span id="shownSpanA">&#x25BC</span> <span id="hiddenSpanA">&#x25B2</span>
+            </div>
+            <div class="menu-links" id="hiddenDivA">
+                <a href="about.html">ABOUT US</a>
+                <a href="ekhaltsha.html">E-KHALTSHA</a>
+                <a href="business-directory.html">LOCAL LISTINGS</a>
+            </div>
+        </section>
+        
+        <section class="menu-items">
+            <div id="toggleDivB" class="toggleDiv">
+                <a href="what-to-do.html">THINGS TO DO</a>
+            </div>
+        </section>
+        <section class="menu-items">
+            <div id="toggleDivC" class="toggleDiv">
+                <a href="events.html">EVENTS</a> <span id="shownSpanC">&#x25BC</span> <span id="hiddenSpanC">&#x25B2</span>
+            </div>
+            <div class="menu-links" id="hiddenDivC">
+                <a href="submityourevent.html">SUBMIT YOUR EVENT</a>
+            </div>
+        </section>
+            <a href="contact-us.html">CONTACT</a>
+    </div>
+    </div>
+</div>
+<!-- end of main menu -->
+    <!-- hero -->
+    <!-- <header class="hero">
+      <div class="banner">
+            <h1 class="banner-title"><span>LOCAL</span><span> LISTINGS</span></h1>
+        </div>
+    </header> -->
+    <!-- end of hero -->
+    <!-- <main> -->
+
+    <section class="content-wrap">
+        <div class="businfo-container" >
+            
+            <div id="slideshow-container" class="businfo-item">
+                <img id="imgOne" class="slide" src="./images/logo.png" alt="slide image 1">
+                <img id="imgTwo" class="slide" src="./images/logo.png" alt="slide image 2">
+                <img id="imgThree" class="slide" src="./images/logo.png" alt="slide image 3">
+                <img id="imgFour" class="slide" src="./images/logo.png" alt="slide image 4">
+                <img id="imgFive" class="slide" src="./images/logo.png" alt="slide image 5">
+                <img id="imgSix" class="slide" src="./images/logo.png" alt="slide image 6">
+    
+                <a class="prev" onClick="changeSlide(-1)">&#10094</a>
+                <a class="next" onClick="changeSlide(1)">&#10095</a>
+            </div>
+        </div>
+        <div class="slideshow">
+            <span>You can also check out:</span>
+            <div class="slide-cont scrollable-container">
+                <button class="scroll-button scroll-button-left" onclick="scrollLeftFunc()">&#10094</button>
+                <button class="scroll-button scroll-button-right" onclick="scrollRight()">&#10095</button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer"></footer>
+    <!-- </main> -->
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+
+            for (let i = 0; i < slides.length; i ++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 6000);
+        }
+
+
+        function scrollRight(){
+            var container = document.querySelector('.scrollable-container');
+            container.scrollBy({
+                left: 100,
+                behavior:'smooth' 
+            });
+        }
+
+        function scrollLeftFunc(){
+            var container = document.querySelector('.scrollable-container');
+            container.scrollBy({
+                left: -100,
+                behavior:'smooth'
+            });
+        }
+
+        function navTo(id){
+            let businesses = JSON.parse(localStorage.getItem('products'));
+            console.log('1')
+            console.log(id)
+            let businessObject = '';
+            for(index=0; index<businesses.length; index++){
+                if(id === businesses[index].id){
+                    businessObject = businesses[index];
+                    localStorage.setItem('business-id', id);
+                    localStorage.setItem('businessObject', JSON.stringify(businessObject));
+                    window.location.href = "business-info.html";
+
+                    index=businesses.length;
+                    console.log('mojo')
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

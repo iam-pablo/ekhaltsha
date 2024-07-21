@@ -1,0 +1,123 @@
+<!doctype = html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/loc-icon.png">
+    <script src="https://kit.fontawesome.com/3dcdd121c8.js"  crossorigin="anonymous"></script>
+    <script type="module" src="script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title>eKhaltsha: Contact Us</title>
+</head>
+
+<body>
+    <!-- navbar -->
+<nav class="navbar">
+    <div class="navbar-center">
+        <a href="index.html"><img src="./images/logo.png" alt="logo-business" style="width:150px;height:100px"></a>
+        <div class="nav-links dis-links">
+            <a href="business-directory.html">LOCAL LISTINGS</a>
+            <a href="what-to-do.html">THINGS TO DO</a>
+            <a href="events.html">EVENTS</a>
+            <a href="contact-us.html">CONTACT</a>
+        </div>
+        <div class="cart-btn dis-con">
+            <span class="nav-con">
+                MENU<i class="fas fa-bars"></i>
+            </span>
+        </div>
+    </div>
+</nav>
+<!-- end of navbar -->
+<!-- main menu -->
+<div class="cart-overlay"><div class="cart">
+    <span class="close-cart">
+        CLOSE  <i class="fas fa-window-close"></i>
+    </span>
+    <a href="index.html"><img src="./images/logo.png" alt="logo-business" class="ekhaltsha-logo"></a>
+    <div class="cart-content menu-container">
+        <section class="menu-items">
+            <div id="toggleDivA" class="toggleDiv">
+                <a>DISCOVER KHAYELITSHA</a><span id="shownSpanA">&#x25BC</span> <span id="hiddenSpanA">&#x25B2</span>
+            </div>
+            <div class="menu-links" id="hiddenDivA">
+                <a href="about.html">ABOUT US</a>
+                <a href="ekhaltsha.html">E-KHALTSHA</a>
+                <a href="business-directory.html">LOCAL LISTINGS</a>
+            </div>
+        </section>
+        
+        <section class="menu-items">
+            <div id="toggleDivB" class="toggleDiv">
+                <a href="what-to-do.html">THINGS TO DO</a>
+            </div>
+        </section>
+        <section class="menu-items">
+            <div id="toggleDivC" class="toggleDiv">
+                <a href="events.html">EVENTS</a> <span id="shownSpanC">&#x25BC</span> <span id="hiddenSpanC">&#x25B2</span>
+            </div>
+            <div class="menu-links" id="hiddenDivC">
+                <a href="submityourevent.html">SUBMIT YOUR EVENT</a>
+            </div>
+        </section>
+            <a href="contact-us.html">CONTACT</a>
+    </div>
+    </div>
+</div>
+<!-- end of main menu -->
+    <!-- hero -->
+    <header class="hero">
+        <div class="banner">
+            <h1 class="banner-title"><span>Contact </span><span>Us</span></h1>
+            <span >Thank you for visit our page! <br> To reach out to us, please fill the form below if you have any feedback, questions, or any concerns. </span>         <!--onclick="navigateToPage(products)"-->
+        </div>
+    </header>
+    <!-- end of hero -->
+    <!-- contact form -->
+    <div class="contact-container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>GET IN TOUCH</h3>
+            <label>
+                <h4>Enter Your Name</h4>
+                <input type="text" name="" id="name" placeholder="e.g Zoleka Mthombeni" required>
+            </label>
+            <label>
+                <h4>Enter Your Email</h4>
+                <input type="email" id="email" placeholder="e.g zoem@example.com" required>
+            </label>
+            <label>
+                <h4>Enter Your Contact Number</h4>
+                <input type="text" id="phone" placeholder="e.g 0678954321" required>
+            </label>
+            <label>
+                <h4>Enter Your message</h4>
+                <textarea id="message" rows="4" placeholder=".........."></textarea>
+            </label>
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+    <!-- end of contact form -->
+    <script>
+    function sendEmail(){
+        Email.send({
+            secureToken :  "8ee6e9a5-43c9-40d4-a32b-683298267c2f",
+            To : "ekhaltsha@gmail.com",
+            From : "ekhaltsha@gmail.com",
+            Subject : "New enquiry from website",
+            Body: "Name: " + document.getElementById("name").value
+                + "<br> Email: " + document.getElementById("email").value 
+                + "<br> Phone no: " + document.getElementById("phone").value
+                + "<br> Message: " + document.getElementbyId("message").value
+        }).then(
+            message => alert("Message Sent Successfully")
+            )
+        };
+    </script>
+
+    
+    <footer class="footer"></footer>
+</body>
+</html>

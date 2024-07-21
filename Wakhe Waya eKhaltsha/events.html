@@ -1,0 +1,180 @@
+<!doctype = html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/loc-icon.png">
+    <script src="https://kit.fontawesome.com/3dcdd121c8.js"  crossorigin="anonymous"></script>
+    <title>eKhaltsha: Events</title>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+    <!-- <main> -->
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <a href="index.html"><img src="./images/logo.png" alt="logo-business" style="width:150px;height:100px"></a>
+            <div class="nav-links dis-links">
+                <a href="business-directory.html">LOCAL LISTINGS</a>
+                <a href="what-to-do.html">THINGS TO DO</a>
+                <a href="events.html">EVENTS</a>
+                <a href="contact-us.html">CONTACT</a>
+            </div>
+            <div class="cart-btn dis-con">
+                <span class="nav-con">
+                    MENU<i class="fas fa-bars"></i>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <!-- end of navbar -->
+    <!-- main menu -->
+    <div class="cart-overlay"><div class="cart">
+        <span class="close-cart">
+            CLOSE  <i class="fas fa-window-close"></i>
+        </span>
+        <a href="index.html"><img src="./images/logo.png" alt="logo-business" class="ekhaltsha-logo"></a>
+        <div class="cart-content menu-container">
+            <section class="menu-items">
+                <div id="toggleDivA" class="toggleDiv">
+                    <a>DISCOVER KHAYELITSHA</a><span id="shownSpanA">&#x25BC</span> <span id="hiddenSpanA">&#x25B2</span>
+                </div>
+                <div class="menu-links" id="hiddenDivA">
+                    <a href="about.html">ABOUT US</a>
+                    <a href="ekhaltsha.html">E-KHALTSHA</a>
+                    <a href="business-directory.html">LOCAL LISTINGS</a>
+                </div>
+            </section>
+            
+            <section class="menu-items">
+                <div id="toggleDivB" class="toggleDiv">
+                    <a href="what-to-do.html">THINGS TO DO</a>
+                </div>
+            </section>
+            <section class="menu-items">
+                <div id="toggleDivC" class="toggleDiv">
+                    <a href="events.html">EVENTS</a> <span id="shownSpanC">&#x25BC</span> <span id="hiddenSpanC">&#x25B2</span>
+                </div>
+                <div class="menu-links" id="hiddenDivC">
+                    <a href="submityourevent.html">SUBMIT YOUR EVENT</a>
+                </div>
+            </section>
+                <a href="contact-us.html">CONTACT</a>
+        </div>
+        </div>
+    </div>
+    <!-- end of main menu -->
+    <!-- hero -->
+    <header class="hero">
+      <div class="banner">
+            <h1 class="banner-title"><span>Events</span></h1>
+      </div>
+    </header>
+    <!-- end of hero -->
+    
+    <!-- <div class="calendar-month">March 2024
+        <button class="mscroll-button scroll-button-left" onclick="scrollLeftFunc()">&#10094</button>
+        <button class="mscroll-button scroll-button-right" onclick="scrollRight()">&#10095</button></div> -->
+    
+        
+    <section class="content-wrap">
+        <div class="page-intro">
+            <h1>UNLEASH THE FUN!</h1>
+            <h3>Stay up to date on events and things to do in Khayelitsha today, this week and this weekend. Whether you're into live music, food and wine, sports or family-friendly entertainment, Khayelitsha events offer nonstop fun for everyone <br><br> Search the Khayelitsha events calendar bewlow to explore our <a>annual festivals</a> and <a>seasonal events</a> taking place throught the year. If you are in Khayelitsha now, make sure you don miss anythiing happenig <a>today</a>,<a>this week</a> and <a>this weekend</a> so you do not miss any one-of-a-kind Khayelitsha events.<br><br>Venues and event organizers, <a href="submityourevent.html">submit events here</a></h3>
+        </div>
+        <div class="events-wrap">
+            
+            <div>
+                <h4 style="text-align:center;">CALENDAR</h4>
+                <!-- <input type="text" name="" id="name" placeholder="Make short but descriptive" required> -->
+                <input type="date" id="datepicker" required/>
+            </div>
+
+            <div class="date-center" style="align-contents: center">
+                
+                    <div class="date-display">
+                        <h3 id="highlighted-day">DAY</h3>
+                        <h1 id="highlighted-month">MONTH</h1>
+                        <span id="highlighted-dayOfWeek">day</span>
+                    </div>
+                    
+                    <div class="public-holidays">
+                        <h5>Public Holidays</h5>
+                        <section class="p-holidays"></section>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div class="events-container">
+            <div id="daysContainer"></div>
+
+            <div class="events-centre">
+
+            </div>
+        </div>
+        
+        <div class="slideshow">
+            <h3 style="margin: 10px 0 5px 0; text-transform:uppercase;">Events happening today:</h3>
+            <div id="todayEvents" class="slide-cont scrollable-container">
+                <button class="scroll-button scroll-button-left" onclick="scrollLeftFunc()">&#10094</button>
+                <button class="scroll-button scroll-button-right" onclick="scrollRight()">&#10095</button>
+            </div>
+        </div>
+
+        <div class="slideshow">
+            <h3 style="margin: 10px 0 5px 0; text-transform:uppercase;">Upcoming events:</h3>
+            <div id="upcomingEvents" class="slide-cont scrollable-container">
+                <button class="scroll-button scroll-button-left" onclick="scrollLeftFunc()">&#10094</button>
+                <button class="scroll-button scroll-button-right" onclick="scrollRight()">&#10095</button>
+            </div>
+        </div>
+
+    </section>
+    
+    <!-- footer -->
+    <footer class="footer"></footer>
+    <!-- end of footer -->
+    <script>
+        function scrollRight(){
+            var container = document.querySelector('.scrollable-container');
+            container.scrollBy({
+                left: 100,
+                behavior:'smooth' 
+            });
+        }
+
+        function scrollLeftFunc(){
+            var container = document.querySelector('.scrollable-container');
+            container.scrollBy({
+                left: -100,
+                behavior:'smooth'
+            });
+        }
+
+        function navTo(id){
+            let businesses = JSON.parse(localStorage.getItem('events'));
+            console.log('1')
+            console.log(id)
+            let businessObject = '';
+            for(index=0; index<businesses.length; index++){
+                if(id === businesses[index].id){
+                    businessObject = businesses[index];
+                    localStorage.setItem('business-id', id);
+                    localStorage.setItem('eventsObject', JSON.stringify(businessObject));
+                    window.location.href = "event-info.html";
+
+                    index=businesses.length;
+                    console.log('mojo')
+                }
+            }
+        }
+    </script>
+    <!-- </main> --> 
+</body>
+
+</html>
