@@ -1,0 +1,131 @@
+<!doctype = html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/loc-icon.png">
+    <script type="module" src="script.js"></script>
+    <script src="https://kit.fontawesome.com/3dcdd121c8.js"  crossorigin="anonymous"></script>
+    <script type="module" src="app.js"></script>
+    <title>eKhaltsha: Business Directory</title>
+</head>
+
+<body>
+    <!-- <main> -->
+        <!-- navbar -->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <a href="index.html"><img src="./images/logo.png" alt="logo-business" style="width:150px;height:100px"></a>
+            <div class="nav-links dis-links">
+                <a href="business-directory.html">LOCAL LISTINGS</a>
+                <a href="what-to-do.html">THINGS TO DO</a>
+                <a href="events.html">EVENTS</a>
+                <a href="contact-us.html">CONTACT</a>
+            </div>
+            <div class="cart-btn dis-con">
+                <span class="nav-con">
+                    MENU<i class="fas fa-bars"></i>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <!-- end of navbar -->
+    <!-- main menu -->
+    <div class="cart-overlay"><div class="cart">
+        <span class="close-cart">
+            CLOSE  <i class="fas fa-window-close"></i>
+        </span>
+        <a href="index.html"><img src="./images/logo.png" alt="logo-business" class="ekhaltsha-logo"></a>
+        <div class="cart-content menu-container">
+            <section class="menu-items">
+                <div id="toggleDivA" class="toggleDiv">
+                    <a>DISCOVER KHAYELITHSA</a><span id="shownSpanA">&#x25BC</span> <span id="hiddenSpanA">&#x25B2</span>
+                </div>
+                <div class="menu-links" id="hiddenDivA">
+                    <a href="about.html">ABOUT US</a>
+                    <a href="ekhaltsha.html">E-KHALTSHA</a>
+                    <a href="business-directory.html">LOCAL LISTINGS</a>
+                </div>
+            </section>
+            
+            <section class="menu-items">
+                <div id="toggleDivB" class="toggleDiv">
+                    <a href="what-to-do.html">THINGS TO DO</a>
+                </div>
+            </section>
+            <section class="menu-items">
+                <div id="toggleDivC" class="toggleDiv">
+                    <a href="events.html">EVENTS</a> <span id="shownSpanC">&#x25BC</span> <span id="hiddenSpanC">&#x25B2</span>
+                </div>
+                <div class="menu-links" id="hiddenDivC">
+                    <a href="submityourevent.html">SUBMIT YOUR EVENT</a>
+                </div>
+            </section>
+                <a href="contact-us.html">CONTACT</a>
+        </div>
+        </div>
+    </div>
+    <!-- end of main menu -->
+    <!-- hero -->
+    <header class="hero">
+      <div class="banner">
+            <h1 class="banner-title"><span>LOCAL</span><span> LISTINGS</span></h1>
+            <h3 class="site-description">Check out our local business below.</h3>
+        </div>
+    </header>
+    <!-- end of hero -->
+    <!-- main content -->
+    <section class="content-wrap main-content">
+        <div class="mini-nav">
+            <div class="mini-nav-butt" onClick="navigateTo(0)">#</div>
+            <div class="mini-nav-butt" onClick="navigateTo('a')">a</div>
+            <div class="mini-nav-butt" onClick="navigateTo('b')">b</div>
+            <div class="mini-nav-butt" onClick="navigateTo('c')">c</div>
+            <div class="mini-nav-butt" onClick="navigateTo('d')">d</div>
+            <div class="mini-nav-butt" onClick="navigateTo('e')">e</div>
+            <div class="mini-nav-butt" onClick="navigateTo('f')">f</div>
+            <div class="mini-nav-butt" onClick="navigateTo('g')">g</div>
+            <div class="mini-nav-butt" onClick="navigateTo('h')">h</div>
+            <div class="mini-nav-butt" onClick="navigateTo('i')">i</div>
+            <div class="mini-nav-butt" onClick="navigateTo('j')">j</div>
+            <div class="mini-nav-butt" onClick="navigateTo('k')">k</div>
+            <div class="mini-nav-butt" onClick="navigateTo('l')">l</div>
+            <div class="mini-nav-butt" onClick="navigateTo('m')">m</div>
+            <div class="mini-nav-butt" onClick="navigateTo('n')">n</div>
+            <div class="mini-nav-butt" onClick="navigateTo('o')">o</div>
+            <div class="mini-nav-butt" onClick="navigateTo('p')">p</div>
+            <div class="mini-nav-butt" onClick="navigateTo('q')">q</div>
+            <div class="mini-nav-butt" onClick="navigateTo('r')">r</div>
+            <div class="mini-nav-butt" onClick="navigateTo('s')">s</div>
+            <div class="mini-nav-butt" onClick="navigateTo('t')">t</div>
+            <div class="mini-nav-butt" onClick="navigateTo('u')">u</div>
+            <div class="mini-nav-butt" onClick="navigateTo('v')">v</div>
+            <div class="mini-nav-butt" onClick="navigateTo('w')">w</div>
+            <div class="mini-nav-butt" onClick="navigateTo('x')">x</div>
+            <div class="mini-nav-butt" onClick="navigateTo('y')">y</div>
+            <div class="mini-nav-butt" onClick="navigateTo('z')">z</div>
+        </div>
+    
+        <section class="products">
+            <div class="products-center"></div>
+        </section>
+    
+    </section>
+    <!-- end of main content -->
+    <!-- footer -->
+    <footer class="footer"></footer>
+    <!-- end of footer -->
+    <!-- </main> -->
+    <script>
+        function navigateTo(sectionID){
+            console.log(sectionID)
+            document.getElementById(sectionID).scrollIntoView()
+            ////window.location.href = '#' + sectionID;
+            console.log(sectionID);
+        };
+    </script>
+</body>
+
+</html>
